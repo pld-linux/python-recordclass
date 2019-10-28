@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_with	doc	# don't build doc
 %bcond_with	tests	# do not perform "make test"
@@ -6,26 +7,25 @@
 
 %define 	module	recordclass
 Summary:	Mutable variant of collections.namedtuple, which supports assignments
-Summary(pl.UTF-8):	Modyfikowalny wariant collections.namedtuple, wspierający przypisania
+Summary(pl.UTF-8):	Modyfikowalny wariant collections.namedtuple, obsługujący przypisania
 Name:		python-%{module}
 Version:	0.4.3
 Release:	3
 License:	MIT
 Group:		Libraries/Python
-# Source0:	https://pypi.python.org/packages/source/M/MODULE/%{module}-%{version}.tar.gz
-Source0:	https://pypi.python.org/packages/cb/33/dbfc5b2945acad0a741e66e96d9416a2860a2b8c49e807cf9f915432b5b4/recordclass-%{version}.tar.gz
+#Source0Download: https://pypi.org/simple/recordclass/
+Source0:	https://files.pythonhosted.org/packages/source/r/recordclass/recordclass-%{version}.tar.gz
 # Source0-md5:	3e36bba64024b70a49b475fd20b56710
 URL:		http://intellimath.bitbucket.org/recordclass
 BuildRequires:	rpm-pythonprov
-# for the py_build, py_install macros
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-devel
-#BuildRequires:	python-setuptools
+BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel
-#BuildRequires:	python3-setuptools
+BuildRequires:	python3-setuptools
 %endif
 Requires:	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,8 +35,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description -l pl.UTF-8
 
 %package -n python3-%{module}
-Summary:	-
-Summary(pl.UTF-8):	-
+Summary:	Mutable variant of collections.namedtuple, which supports assignments
+Summary(pl.UTF-8):	Modyfikowalny wariant collections.namedtuple, obsługujący przypisania
 Group:		Libraries/Python
 Requires:	python3-modules
 
