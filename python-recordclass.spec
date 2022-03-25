@@ -10,7 +10,7 @@ Summary:	Mutable variant of collections.namedtuple, which supports assignments
 Summary(pl.UTF-8):	Modyfikowalny wariant collections.namedtuple, obsługujący przypisania
 Name:		python-%{module}
 Version:	0.4.3
-Release:	5
+Release:	6
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/recordclass/
